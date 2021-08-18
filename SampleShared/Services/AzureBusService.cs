@@ -8,7 +8,8 @@ namespace SampleShared.Services
         public string ConnectionString { get; set; }
         public string QueueName { get; set; }
         public async Task SendMessageAsync(string payload)
-        {// instantiate servicebusclient
+        {
+            // instantiate servicebusclient
             await using var client = new ServiceBusClient(ConnectionString);
 
             // create the sender
